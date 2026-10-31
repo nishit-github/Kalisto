@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Decor | Sustainable Artificial Floral & Event Decor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #9d174d;
+            --primary-light: #fbcfe8;
+            --secondary: #065f46;
+            --accent: #d97706;
+            --bg-light: #fff1f2;
+            --text-dark: #1f2937;
+            --text-muted: #4b5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #fdfbfb;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-wa {
+            background-color: #25D366;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            background-color: #20ba5a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(157, 23, 77, 0.05), rgba(6, 95, 70, 0.05)), url('https://www.marriagecolours.com/wp-content/uploads/2025/10/Sravaani-Sharan-Haldi-House-May-25-10.jpg') center/cover;
+            padding: 5rem 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .hero tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        /* Features / Why Artificial */
+        .features {
+            padding: 4rem 1.5rem;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--bg-light);
+            text-align: center;
+            border: 1px solid #fecdd3;
+        }
+
+        .feature-card h3 {
+            margin: 1rem 0 0.5rem 0;
+            color: var(--secondary);
+        }
+
+        /* Portfolio */
+        .portfolio {
+            padding: 4rem 1.5rem;
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+
+        .portfolio-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Services / Packages */
+        .services {
+            background: #f8fafc;
+            padding: 4rem 1.5rem;
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card ul li {
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 1.5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Aura <span>Decor</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">Why Artificial?</a></li>
+                <li><a href="#portfolio">Gallery</a></li>
+                <li><a href="#services">Occasions</a></li>
+            </ul>
+            <a href="https://wa.me/919892289522?text=Hi%2C%20I%20am%20looking%20for%20home%20decor%20services%20for%20an%20upcoming%20event.%20Please%20share%20details." target="_blank" class="btn-wa">
+                Book on WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <tag>Eco-Friendly & Mess-Free</tag>
+            <h1>Exquisite Artificial Floral & Event Decor</h1>
+            <p>Transforming your home for Marriages, Ganpati, Paryushan, & Special Celebrations with premium, reusable, and zero-mess artificial setups.</p>
+            <a href="https://wa.me/919892289522?text=Hi%2C%20I%20want%20to%20inquire%20about%20decorating%20my%20home%20for%20an%20event." target="_blank" class="btn-wa" style="padding: 0.8rem 1.8rem; font-size: 1.1rem;">
+                Get Free Decor Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Features / Why Artificial -->
+    <section class="features" id="about">
+        <div class="section-title">
+            <h2>Why Choose Artificial Decor?</h2>
+            <p>Elegance without the hassle of wilting flowers or clean-up</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>🌸 Stays Fresh All Day</h3>
+                <p>No wilting under warm lights or multi-day festival rituals like Paryushan & Ganpati.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌿 Zero Mess & Cleaning</h3>
+                <p>No dropped petals, stained walls, or water spills on your home furniture.</p>
+            </div>
+            <div class="feature-card">
+                <h3>♻️ Eco-Friendly & Reusable</h3>
+                <p>Sustainable setup using premium silk flowers, cloth backdrops, and brass props.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Fully Customized</h3>
+                <p>Tailored themes matched specifically to your home layout and traditional preferences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="portfolio" id="portfolio">
+        <div class="section-title">
+            <h2>Recent Decor Setup Gallery</h2>
+            <p>Browse through some of our handcrafted home transformations</p>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://www.marriagecolours.com/wp-content/uploads/2025/10/Sravaani-Sharan-Haldi-House-May-25-10.jpg" alt="Home Wedding Haldi Decor">
+                <div class="portfolio-info">
+                    <h3>Home Wedding / Haldi</h3>
+                    <p>Vibrant yellow silk marigold drapes with brass urlis.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://cheetah.cherishx.com/uploads/ivory-jasmine-ganesh-chaturthi-floral-backdrop.jpg" alt="Ganpati Setup">
+                <div class="portfolio-info">
+                    <h3>Ganpati Makhar Decor</h3>
+                    <p>Graceful ivory jasmine and pastel lotus backdrop theme.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://i.etsystatic.com/26063842/r/il/eeccc7/7558684991/il_fullxfull.7558684991_cepl.jpg" alt="Paryushan Setup">
+                <div class="portfolio-info">
+                    <h3>Paryushan Mandap</h3>
+                    <p>Serene white Jasmine & floral arch arrangement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Packages -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Specialized Events</h2>
+            <p>We bring everything to your home, set it up, and dismantle it seamlessly</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Ganpati Bappa Setups</h3>
+                <div class="price">Custom Packages</div>
+                <ul>
+                    <li>✓ Floral Makhar & Mandap Backdrops</li>
+                    <li>✓ Ambient Fairy & Warm Lighting</li>
+                    <li>✓ High-Quality Silk Lotus & Roses</li>
+                    <li>✓ Quick Setup & Dismantling</li>
+                </ul>
+                <a href="https://wa.me/919892289522?text=Hi%2C%20I%20am%20interested%20in%20Ganpati%20decor%20setups." target="_blank" class="btn-wa">Inquire via WhatsApp</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Paryushan & Religious Events</h3>
+                <div class="price">Custom Packages</div>
+                <ul>
+                    <li>✓ Elegant White & Green Silk Themes</li>
+                    <li>✓ Temple / Puja Room Transformations</li>
+                    <li>✓ Sattvik & Peaceful Aesthetics</li>
+                    <li>✓ Multi-day Rental Options</li>
+                </ul>
+                <a href="https://wa.me/919892289522?text=Hi%2C%20I%20am%20interested%20in%20Paryushan%20puja%20decor." target="_blank" class="btn-wa">Inquire via WhatsApp</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Home Weddings & Haldi</h3>
+                <div class="price">Custom Packages</div>
+                <ul>
+                    <li>✓ Haldi / Mehendi Photobooth Corners</li>
+                    <li>✓ Marigold & Traditional Props</li>
+                    <li>✓ Entrance Door Torans & Aisle Decor</li>
+                    <li>✓ Reusable & Mess-free Silk Flowers</li>
+                </ul>
+                <a href="https://wa.me/919892289522?text=Hi%2C%20I%20am%20interested%20in%20wedding%2Fhaldi%20decor." target="_blank" class="btn-wa">Inquire via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Aura Decor Services</h3>
+        <p>Providing premium artificial floral decorations for home events across the city.</p>
+        <p>&copy; 2026 Aura Decor. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
